@@ -4,6 +4,7 @@
 
 
 ![Thumbnail](https://i.ibb.co/K9G8WsJ/Screenshot-2025-01-21-170712.png)
+
 ## Features
 
 - **Login via OTP**: Users can log in using their email.
@@ -21,18 +22,37 @@
 - **React DnD**: Drag-and-drop library to manage playlist card reordering.
 - **OAuth**: Google OAuth for YouTube integration.
 
+##Here are the dependencies for the project:
+- `firebase`
+- `react`
+- `react-dnd`
+- `react-dom`
+- `react-ionicons`
+- `react-router-dom`
+- `react-toastify`
+- `styled-components`
+- `yarn`
+
+
+## Live Link
+
+[Click here to visit the live site](https://assignment-react-mo94ci9b4-harshnishads-projects.vercel.app/)
 
 
 ![Thumbnail](https://i.ibb.co/kSLV22x/Screenshot-2025-01-21-170629.png)
 
 ## Setup Instructions
 
-### Prerequisites
-
-- Install [Node.js](https://nodejs.org/) and [Yarn](https://yarnpkg.com/) if not already installed.
-
 ### Clone the Repository
 
 ```bash
 git clone https://github.com/yourusername/playlist-manager.git
 cd playlist-manager
+```
+
+### How to start
+
+```bash
+yarn install
+yarn run dev
+```
