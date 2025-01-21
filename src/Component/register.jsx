@@ -1,8 +1,59 @@
+import React, { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import  { useState } from "react";
 import { auth, db } from "./firebase";
 import { setDoc, doc } from "firebase/firestore";
 import { toast } from "react-toastify";
+import styled from "styled-components"; // Import styled-components
+
+// Styled Components
+const FormContainer = styled.form`
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+`;
+
+const FormTitle = styled.h3`
+  text-align: center;
+  margin-bottom: 20px;
+`;
+
+const InputField = styled.input`
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+
+  &:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+`;
+
+const SubmitButton = styled.button`
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+
+  &:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+`;
+
+const ForgotPasswordLink = styled.p`
+  text-align: right;
+  font-size: 14px;
+`;
 
 function Register() {
   const [email, setEmail] = useState("");
@@ -49,14 +100,13 @@ function Register() {
   };
 
   return (
-    <form onSubmit={handleRegister}>
-      <h3>Sign Up</h3>
+    <FormContainer onSubmit={handleRegister}>
+      <FormTitle>Sign Up</FormTitle>
 
       <div className="mb-3">
         <label>Firstname</label>
-        <input
+        <InputField
           type="text"
-          className="form-control"
           placeholder="First name"
           onChange={(e) => setFname(e.target.value)}
           value={fname}
@@ -66,9 +116,8 @@ function Register() {
 
       <div className="mb-3">
         <label>Last name</label>
-        <input
+        <InputField
           type="text"
-          className="form-control"
           placeholder="Last name"
           onChange={(e) => setLname(e.target.value)}
           value={lname}
@@ -78,9 +127,8 @@ function Register() {
 
       <div className="mb-3">
         <label>Email address</label>
-        <input
+        <InputField
           type="email"
-          className="form-control"
           placeholder="Enter email"
           onChange={(e) => setEmail(e.target.value)}
           value={email}
@@ -90,9 +138,8 @@ function Register() {
 
       <div className="mb-3">
         <label>Password</label>
-        <input
+        <InputField
           type="password"
-          className="form-control"
           placeholder="Enter password"
           onChange={(e) => setPassword(e.target.value)}
           value={password}
@@ -101,14 +148,15 @@ function Register() {
       </div>
 
       <div className="d-grid">
-        <button type="submit" className="btn btn-primary" disabled={isLoading}>
+        <SubmitButton type="submit" disabled={isLoading}>
           {isLoading ? "Registering..." : "Sign Up"}
-        </button>
+        </SubmitButton>
       </div>
-      <p className="forgot-password text-right">
+
+      <ForgotPasswordLink>
         Already registered? <a href="/login">Login</a>
-      </p>
-    </form>
+      </ForgotPasswordLink>
+    </FormContainer>
   );
 }
 
