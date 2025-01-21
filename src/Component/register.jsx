@@ -53,7 +53,7 @@ function Register() {
       <h3>Sign Up</h3>
 
       <div className="mb-3">
-        <label>First name</label>
+        <label>Firstname</label>
         <input
           type="text"
           className="form-control"

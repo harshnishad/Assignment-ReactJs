@@ -98,15 +98,9 @@ function Login() {
   return (
     <Form onSubmit={handleSubmit}>
       <Title>Login</Title>
-
       <div className="mb-3">
         <label>Email address</label>
-        <Input
-          type="email"
-          placeholder="Enter email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
+        <Input type="email" placeholder="Enter email" value={email} onChange={(e) => setEmail(e.target.value)}/>
       </div>
 
       <div className="mb-3">
