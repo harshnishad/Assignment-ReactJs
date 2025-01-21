@@ -8,7 +8,7 @@ import styled from "styled-components";
 const Form = styled.form`
   width: 100%;
   max-width: 400px;
-  margin: auto;
+  margin-left:35vw;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 `;
