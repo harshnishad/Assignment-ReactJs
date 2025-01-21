@@ -15,6 +15,17 @@ const Topbar = () => {
         }
     }, []);
 
+    // Function to handle logout
+    const handleLogout = () => {
+        auth.signOut()
+            .then(() => {
+                setUser(null);
+            })
+            .catch((error) => {
+                console.error("Error during logout: ", error);
+            });
+    };
+
     const TopbarDiv = styled.div`
         position: fixed;
         left: 23vw;
@@ -34,7 +45,7 @@ const Topbar = () => {
     `;
     
     const FirstSection = styled.div`
-        margin-right: 10vw;
+        margin-right: 8vw;
     `;
     
     const Text = styled.h4`
@@ -143,9 +154,10 @@ const Topbar = () => {
                                 <ProfilePic src={user.photoURL} alt="Profile Picture" />
                                 <Username>{user.displayName}</Username>
                             </ProfileInfo>
+                            <Button onClick={handleLogout}>Logout</Button>
                         </LoginContainer>
                     ) : (
-                        <Button>Login</Button>
+                        <Button ><a href="/">Login</a></Button>
                     )}
 
                 </SecondSection>
