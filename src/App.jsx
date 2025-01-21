@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 
 import Login from "./Component/Login.jsx";  // Ensure this path and case is correct
-import Register from "./Component/Register.jsx"; // Ensure this path and case is correct
+// import Register from "./Component/Register.jsx"; // Ensure this path and case is correct
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -33,7 +33,7 @@ function App() {
                 element={user ? <Navigate to="/profile" /> : <Login />}
               />
               <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
+              {/* <Route path="/register" element={<Register />} /> */}
               <Route path="/profile" element={<HomePage />} />
             </Routes>
             <ToastContainer />
