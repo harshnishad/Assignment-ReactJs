@@ -7,12 +7,12 @@ import {
 } from "react-router-dom";
 
 import Login from "./Component/Login.jsx";  // Ensure this path and case is correct
-import Register from "./component/Register.jsx"; // Ensure this path and case is correct
+import Register from "./Component/Register.jsx"; // Ensure this path and case is correct
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import HomePage from "./Component/HomePage/HomePage.jsx";
-import { auth } from "./component/firebase";
+import { auth } from "./Component/firebase";
 
 function App() {
   const [user, setUser] = useState();
