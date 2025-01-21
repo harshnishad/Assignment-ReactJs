@@ -33,8 +33,8 @@ function App() {
                 element={user ? <Navigate to="/profile" /> : <Login />}
               />
               <Route path="/login" element={<Login />} />
-              {/* <Route path="/register" element={<Register />} /> */}
-              <Route path="https://assignment-react-js-88a3-henna.vercel.app/profile" element={<HomePage />} />
+              
+              <Route path="/profile" element={<HomePage />} />
             </Routes>
             <ToastContainer />
           </div>
