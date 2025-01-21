@@ -11,10 +11,12 @@
 ## Technologies Used
 
 - **React**: Frontend framework for building the UI.
-- **Firebase**: User authentication (OTP), Firestore for saving layout.
+- **Firebase**: Firestore for saving data.
 - **YouTube API**: Fetching private YouTube playlists and videos.
 - **React DnD**: Drag-and-drop library to manage playlist card reordering.
 - **OAuth**: Google OAuth for YouTube integration.
+
+
 
 ## Setup Instructions
 
