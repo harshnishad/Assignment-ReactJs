@@ -1,9 +1,9 @@
-import  { useState } from "react";
+import { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth, db } from "./firebase";
 import { setDoc, doc } from "firebase/firestore";
 import { toast } from "react-toastify";
-import styled from "styled-components"; // Import styled-components
+import styled from "styled-components";
 
 // Styled Components
 const FormContainer = styled.form`
@@ -55,6 +55,12 @@ const ForgotPasswordLink = styled.p`
   font-size: 14px;
 `;
 
+const Label = styled.label`
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+`;
+
 function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -91,7 +97,7 @@ function Register() {
         position: "top-center",
       });
     } catch (error) {
-      setIsLoading(false);
+      setIsLoading(false); // Reset loading state in case of error
       console.error(error.message);
       toast.error(error.message, {
         position: "bottom-center",
@@ -104,7 +110,7 @@ function Register() {
       <FormTitle>Sign Up</FormTitle>
 
       <div className="mb-3">
-        <label>Firstname</label>
+        <Label>Firstname</Label>
         <InputField
           type="text"
           placeholder="First name"
@@ -115,7 +121,7 @@ function Register() {
       </div>
 
       <div className="mb-3">
-        <label>Last name</label>
+        <Label>Last name</Label>
         <InputField
           type="text"
           placeholder="Last name"
@@ -126,7 +132,7 @@ function Register() {
       </div>
 
       <div className="mb-3">
-        <label>Email address</label>
+        <Label>Email address</Label>
         <InputField
           type="email"
           placeholder="Enter email"
@@ -137,7 +143,7 @@ function Register() {
       </div>
 
       <div className="mb-3">
-        <label>Password</label>
+        <Label>Password</Label>
         <InputField
           type="password"
           placeholder="Enter password"
