@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import CardBox from '../assets/CardBox';
 import styled from 'styled-components';
 import { useDrag, useDrop } from 'react-dnd';
