@@ -1,4 +1,9 @@
 # Full Stack Assignment | Harsh Nishad
+
+[Watch the demo video here](https://drive.google.com/file/d/10YihEySXbLFi7XD-k0uf-8I2i2Ds0lS6/view?usp=sharing)
+
+
+![Thumbnail](https://i.ibb.co/K9G8WsJ/Screenshot-2025-01-21-170712.png)
 ## Features
 
 - **Login via OTP**: Users can log in using their email.
@@ -17,6 +22,8 @@
 - **OAuth**: Google OAuth for YouTube integration.
 
 
+
+![Thumbnail](https://i.ibb.co/kSLV22x/Screenshot-2025-01-21-170629.png)
 
 ## Setup Instructions
 
