@@ -1,7 +1,7 @@
 # Full Stack Assignment | Harsh Nishad
 ## Features
 
-- **Login via OTP**: Users can log in using an OTP sent to their email.
+- **Login via OTP**: Users can log in using their email.
 - **YouTube Integration**: Fetch and display private YouTube playlists.
 - **Draggable Cards**: Implement drag-and-drop functionality for playlist cards.
 - **Save and Load Layout**: Users can save their custom layout of playlist cards and load it later.
