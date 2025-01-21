@@ -2,7 +2,7 @@ import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "./firebase";
 import { toast } from "react-toastify";
-import SignInwithGoogle from "./signInWIthGoogle";
+import SignInwithGoogle from "./SignInWithGoogle";
 import styled from "styled-components";
 
 const Form = styled.form`
@@ -10,7 +10,6 @@ const Form = styled.form`
   max-width: 400px;
   margin: auto;
   padding: 20px;
-  
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 `;
 
@@ -37,7 +36,6 @@ const Button = styled.button`
   border-radius: 5px;
   font-size: 16px;
   cursor: pointer;
-
   &:hover {
     background-color: #0056b3;
   }
@@ -51,30 +49,49 @@ const ForgotPassword = styled.p`
 const RegisterLink = styled.a`
   color: #007bff;
   text-decoration: none;
-
   &:hover {
     text-decoration: underline;
   }
 `;
 
+const ErrorText = styled.p`
+  color: red;
+  font-size: 14px;
+`;
+
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    // Basic Validation
+    if (!email || !password) {
+      setError("Please enter both email and password.");
+      return;
+    }
+
+    setLoading(true);
+    setError(null);
+
     try {
       await signInWithEmailAndPassword(auth, email, password);
       console.log("User logged in Successfully");
       window.location.href = "/profile";
-      toast.success("User logged in Successfully", {
+      toast.success("User logged in successfully", {
         position: "top-center",
       });
     } catch (error) {
       console.log(error.message);
+      setError(error.message);
       toast.error(error.message, {
         position: "bottom-center",
       });
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -102,12 +119,18 @@ function Login() {
         />
       </div>
 
+      {error && <ErrorText>{error}</ErrorText>}
+
       <div>
-        <Button type="submit">Submit</Button>
+        <Button type="submit" disabled={loading}>
+          {loading ? "Logging in..." : "Submit"}
+        </Button>
       </div>
+
       <ForgotPassword>
         New user <RegisterLink href="/register">Register Here</RegisterLink>
       </ForgotPassword>
+
       <SignInwithGoogle />
     </Form>
   );
