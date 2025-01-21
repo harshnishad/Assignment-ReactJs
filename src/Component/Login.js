@@ -2,7 +2,7 @@ import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "./firebase";
 import { toast } from "react-toastify";
-import SignInwithGoogle from "./SignInWithGoogle";
+import SignInwithGoogle from "./signInWIthGoogle";
 import styled from "styled-components";
 
 const Form = styled.form`
