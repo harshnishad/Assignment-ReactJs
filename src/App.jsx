@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 
 import Login from "./Component/Login.jsx";  // Ensure this path and case is correct
-import SignUp from "./component/register.jsx"; // Ensure this path and case is correct
+import SignUp from "./component/Register.jsx"; // Ensure this path and case is correct
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
