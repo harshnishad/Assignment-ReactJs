@@ -1,6 +1,4 @@
-import React, { useEffect } from "react";
-// import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-// import "./App.css";
+import React, { useEffect, useState } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -8,13 +6,12 @@ import {
   Navigate,
 } from "react-router-dom";
 
-import Login from "./component/login";
-import SignUp from "./component/register";
+import Login from "./component/login";  // Ensure this path and case is correct
+import SignUp from "./component/register"; // Ensure this path and case is correct
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import HomePage from "./Component/HomePage/HomePage"
-import { useState } from "react";
+import HomePage from "./Component/HomePage/HomePage";
 import { auth } from "./component/firebase";
 
 function App() {
@@ -23,7 +20,8 @@ function App() {
     auth.onAuthStateChanged((user) => {
       setUser(user);
     });
-  });
+  }, []); // Add empty dependency array for proper useEffect behavior
+
   return (
     <Router>
       <div className="App">
