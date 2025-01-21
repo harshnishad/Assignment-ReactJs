@@ -6,12 +6,12 @@ import {
   Navigate,
 } from "react-router-dom";
 
-import Login from "./component/login";  // Ensure this path and case is correct
-import SignUp from "./component/register"; // Ensure this path and case is correct
+import Login from "./component/login.jsx";  // Ensure this path and case is correct
+import SignUp from "./component/register.jsx"; // Ensure this path and case is correct
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import HomePage from "./Component/HomePage/HomePage";
+import HomePage from "./Component/HomePage/HomePage.jsx";
 import { auth } from "./component/firebase";
 
 function App() {
