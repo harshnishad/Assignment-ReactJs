@@ -5,6 +5,12 @@
 
 ![Thumbnail](https://i.ibb.co/K9G8WsJ/Screenshot-2025-01-21-170712.png)
 
+### Dummy Login Data
+```
+  Email address : harsh@glau.ac.in
+  password : 12345678
+```
+
 ## Features
 
 - **Login via OTP**: Users can log in using their email.
@@ -34,13 +40,18 @@
 - `yarn`
 
 
+
+## FireBase Account
+![Thumbnail](https://i.ibb.co/bXpZRJv/Screenshot-2025-01-22-133740.png)
+
+
 ## Live Link
 
 [Click here to visit the live site](https://assignment-react-js-five.vercel.app/)
 
 
 ![Thumbnail](https://i.ibb.co/kSLV22x/Screenshot-2025-01-21-170629.png)
-
+![Thumbnail](https://i.ibb.co/ypqWjsr/Screenshot-2025-01-22-134141.png)
 ## Setup Instructions
 
 ### Clone the Repository
