@@ -31,9 +31,9 @@ function App() {
                 path="/"
                 element={user ? <Navigate to="/profile" /> : <Login />}
               />
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/profile" element={<HomePage />} />
+              <Route path="https://assignment-react-js-five.vercel.app/register/login" element={<Login />} />
+              <Route path="https://assignment-react-js-five.vercel.app/register" element={<Register />} />
+              <Route path="https://assignment-react-js-five.vercel.app/register/profile" element={<HomePage />} />
             </Routes>
             <ToastContainer />
           </div>
