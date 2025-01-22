@@ -68,7 +68,7 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    // Basic Validation
+  
     if (!email || !password) {
       setError("Please enter both email and password.");
       return;

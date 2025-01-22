@@ -31,9 +31,9 @@ function App() {
                 path="/"
                 element={user ? <Navigate to="/profile" /> : <Login />}
               />
-              <Route to="/login" element={<Login />} />
-              <Route to="/register" element={<Register />} />
-              <Route to="/profile" element={<HomePage />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/profile" element={<HomePage />} />
             </Routes>
             <ToastContainer />
           </div>
