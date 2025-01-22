@@ -7,12 +7,12 @@ import styled from "styled-components";
 
 
 const FormContainer = styled.form`
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
+  width:30vw;
+  margin-left:30vw;
+  padding: 40px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  background-color: #fff;
+ 
 `;
 
 const FormTitle = styled.h3`
@@ -35,7 +35,8 @@ const InputField = styled.input`
 `;
 
 const SubmitButton = styled.button`
-  width: 100%;
+  width: 50%;
+  
   padding: 10px;
   background-color: #007bff;
   color: #fff;
@@ -43,7 +44,7 @@ const SubmitButton = styled.button`
   border-radius: 4px;
   font-size: 16px;
   cursor: pointer;
-
+  margin-left:8vw;
   &:disabled {
     background-color: #cccccc;
     cursor: not-allowed;
