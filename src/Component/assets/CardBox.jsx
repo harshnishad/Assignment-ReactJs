@@ -1,10 +1,9 @@
 import styled from "styled-components";
 
 const CardBox = ({ data }) => {
-  // Destructuring the properties from the data prop
+  
   const { backgroundImage, playlistName, videoCount } = data;
 
-  // Styled component for the card wrapper
   const CardWrapper = styled.div`
     width: 15vw;
     height: 23vh;

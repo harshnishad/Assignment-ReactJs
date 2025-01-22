@@ -6,12 +6,11 @@ import {
   Navigate,
 } from "react-router-dom";
 
-import Login from "./Component/Login.jsx";  // Ensure this path and case is correct
-// import Register from "./Component/Register.jsx"; // Ensure this path and case is correct
-
+import Login from "./Component/Pages/LoginPage/Login.jsx";  
+import Register from "./Component/Pages/Register/Register.jsx"; 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import HomePage from "./Component/HomePage/HomePage.jsx";
+import HomePage from "./Component/Pages/HomePage/HomePage.jsx";
 import { auth } from "./Component/firebase";
 
 function App() {
@@ -20,7 +19,7 @@ function App() {
     auth.onAuthStateChanged((user) => {
       setUser(user);
     });
-  }, []); // Add empty dependency array for proper useEffect behavior
+  }, []); 
 
   return (
     <Router>
@@ -33,7 +32,7 @@ function App() {
                 element={user ? <Navigate to="/profile" /> : <Login />}
               />
               <Route path="/login" element={<Login />} />
-              
+              <Route path="/register" element={<Register />} />
               <Route path="/profile" element={<HomePage />} />
             </Routes>
             <ToastContainer />

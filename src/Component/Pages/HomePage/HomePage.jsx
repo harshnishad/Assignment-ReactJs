@@ -1,10 +1,10 @@
 import styled from "styled-components"
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
-import Sidebar from "../Pages/Sidebar";
-import Topbar from "../Pages/Topbar";
-import Midbar from "../Pages/Midbar";
-import Rightbar from "../Pages/Rightbar";
+import Sidebar from "./Sidebar";
+import Topbar from "./Topbar";
+import Midbar from "./Midbar";
+import Rightbar from "./Rightbar";
 
 function HomePage() {
  const AppDiv = styled.div`

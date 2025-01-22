@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import PlayList from "../assets/PlayList";
+import PlayList from "../../assets/PlayList";
 
 const Rightbar = () => {
     const RightWrapper = styled.div`
@@ -79,8 +79,8 @@ const Rightbar = () => {
 
     const ProductList = styled.div`
        
-    height: 35vh; /* Set a fixed height for the product list */
-    overflow-y: scroll; /* Makes the list scrollable */
+    height: 35vh; 
+    overflow-y: scroll; 
     margin: 10px;
     display: flex;
     flex-direction: column;

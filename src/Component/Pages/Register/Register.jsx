@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth, db } from "./firebase";
+import { auth, db } from "../../firebase";
 import { setDoc, doc } from "firebase/firestore";
 import { toast } from "react-toastify";
 import styled from "styled-components";
 
-// Styled Components
+
 const FormContainer = styled.form`
   max-width: 400px;
   margin: 0 auto;
@@ -71,7 +71,7 @@ function Register() {
   const handleRegister = async (e) => {
     e.preventDefault();
 
-    // Simple client-side validation
+   
     if (password.length < 6) {
       toast.error("Password must be at least 6 characters long", {
         position: "bottom-center",
@@ -84,12 +84,12 @@ function Register() {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
 
-      // Storing user data in Firestore
+      
       await setDoc(doc(db, "Users", user.uid), {
         email: user.email,
         firstName: fname,
         lastName: lname,
-        photo: "", // Placeholder for photo if needed
+        photo: "", 
       });
 
       console.log("User Registered Successfully!");
@@ -97,7 +97,7 @@ function Register() {
         position: "top-center",
       });
     } catch (error) {
-      setIsLoading(false); // Reset loading state in case of error
+      setIsLoading(false); 
       console.error(error.message);
       toast.error(error.message, {
         position: "bottom-center",

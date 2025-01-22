@@ -1,9 +1,9 @@
 import  { useState } from 'react';
-import CardBox from '../assets/CardBox';
+import CardBox from '../../assets/CardBox';
 import styled from 'styled-components';
 import { useDrag, useDrop } from 'react-dnd';
 
-// Dummy data
+
 const dummyData = [
   {
     backgroundImage: "https://th.bing.com/th/id/OIP.2ZY6_dTCqtDRtH4z9xpqcwHaEK?rs=1&pid=ImgDetMain",
@@ -37,9 +37,9 @@ const dummyData = [
   },
 ];
 
-// Midbar component
+
 const Midbar = () => {
-  const [playlists, setPlaylists] = useState(dummyData);  // Store state for dynamic changes
+  const [playlists, setPlaylists] = useState(dummyData); 
 
   const MidbarWrapper = styled.div`
     position: fixed;
@@ -93,8 +93,8 @@ const DraggableCard = ({ index, data, moveCard }) => {
     accept: 'CARD',
     hover: (item) => {
       if (item.index !== index) {
-        moveCard(item.index, index); // Move the card
-        item.index = index; // Update the index of the dragged card
+        moveCard(item.index, index);
+        item.index = index; 
       }
     },
   }));

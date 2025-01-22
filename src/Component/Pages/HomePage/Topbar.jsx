@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
-import { auth } from '../firebase'; 
+import { auth } from '../../firebase'; 
 import styled from 'styled-components';
 
 const Topbar = () => {
     const [user, setUser] = useState(null);
 
-    // Fetch the current user on component mount
+    
     useEffect(() => {
         const currentUser = auth.currentUser;
         if (currentUser) {
@@ -15,7 +15,6 @@ const Topbar = () => {
         }
     }, []);
 
-    // Function to handle logout
     const handleLogout = () => {
         auth.signOut()
             .then(() => {
