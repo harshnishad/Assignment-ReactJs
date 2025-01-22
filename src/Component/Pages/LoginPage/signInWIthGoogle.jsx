@@ -2,7 +2,7 @@ import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth, db } from "../../firebase";
 import { toast } from "react-toastify";
 import { setDoc, doc } from "firebase/firestore";
-import google from "../google.png";
+import google from "../../../google.png";
 import { useNavigate } from 'react-router-dom'; 
 
 function SignInWithGoogle() {
