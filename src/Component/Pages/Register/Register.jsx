@@ -161,7 +161,7 @@ function Register() {
       </div>
 
       <ForgotPasswordLink>
-        Already registered? <a href="/login">Login</a>
+        Already registered? <Link to="/login">Login</Link>
       </ForgotPasswordLink>
     </FormContainer>
   );
