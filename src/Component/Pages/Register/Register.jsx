@@ -4,6 +4,7 @@ import { auth, db } from "../../firebase";
 import { setDoc, doc } from "firebase/firestore";
 import { toast } from "react-toastify";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 
 const FormContainer = styled.form`
