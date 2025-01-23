@@ -4,7 +4,7 @@ import { auth } from "../../firebase";
 import { toast } from "react-toastify";
 import SignInwithGoogle from "./signInWIthGoogle";
 import styled from "styled-components";
-
+import { Link } from "react-router-dom";
 const Form = styled.form`
   width: 100%;
   max-width: 400px;
@@ -122,7 +122,7 @@ function Login() {
       </div>
 
       <ForgotPassword>
-        New user <RegisterLink href="/register">Register Here</RegisterLink>
+        New user <Link to="/register">Register Here</Link>
       </ForgotPassword>
 
       <SignInwithGoogle />
