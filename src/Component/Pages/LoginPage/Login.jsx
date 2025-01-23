@@ -4,7 +4,8 @@ import { auth } from "../../firebase";
 import { toast } from "react-toastify";
 import SignInwithGoogle from "./signInWIthGoogle";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
 const Form = styled.form`
   width: 100%;
   max-width: 400px;
@@ -65,10 +66,11 @@ function Login() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
+  const navigate = useNavigate();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-  
+
     if (!email || !password) {
       setError("Please enter both email and password.");
       return;
@@ -80,10 +82,10 @@ function Login() {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       console.log("User logged in Successfully");
-      window.location.href = "/profile";
       toast.success("User logged in successfully", {
         position: "top-center",
       });
+      navigate("/profile");
     } catch (error) {
       console.log(error.message);
       setError(error.message);
@@ -100,7 +102,12 @@ function Login() {
       <Title>Login</Title>
       <div className="mb-3">
         <label>Email address</label>
-        <Input type="email" placeholder="Enter email" value={email} onChange={(e) => setEmail(e.target.value)}/>
+        <Input
+          type="email"
+          placeholder="Enter email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
       </div>
 
       <div className="mb-3">
